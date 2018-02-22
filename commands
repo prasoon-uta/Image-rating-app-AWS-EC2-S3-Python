@@ -1,0 +1,6 @@
+vi flaskapp.wsgi                         	
+cat /var/log/apache2/error.log |less
+
+ssh -i "sdg-awskey.pem" ubuntu@ec2-35-161-212-239.us-west-2.compute.amazonaws.com
+
+sudo apachectl restart

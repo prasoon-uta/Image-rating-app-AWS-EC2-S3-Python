@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Flask Assignment 2 SDG</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+<style>
+vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+</style>
+ 
+</head>
+
+<body>
+
+<input type="hidden" value = {{msg}} name = "hidden_user" id = "hidden_user" />
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+      <p>Prasoon kumar 1001415936</p>
+      <p> <B>Welcome {{msg}} </B></p>
+      <form method="post" action="home" name="submit">
+		<input type="submit" class="btn btn-primary" name="delete" value="Home">
+		</form>
+
+  </div>
+</nav>
+
+ <img src="https://s3.amazonaws.com/prasoon-bucket/seir.jpg"   class="img-thumbnail" />
+
+<div class="jumbotron vertical-center"> <!--
+                      ^--- Added class  -->
+  <div class="container">
+      <label ><B>Upload image here</B></label>
+      <form enctype="multipart/form-data" action="save-file" method="post">
+
+       <input type="hidden" name="hidden_user_val" value = {{msg}} id ="hidden_user_val"/>
+
+          <div class="form-group">
+    <label >File input</label>
+    <input type="file" class="form-control-file" name="file">
+    </div>
+
+
+          <div class="form-group">
+    <label >Title</label>
+    <input  class="form-control" name="title" placeholder="Enter image title">
+
+  </div>
+
+  <button type="submit" class="btn btn-primary">Upload Image</button>
+</form>
+  </div>
+</div>
+
+<div class="jumbotron vertical-center"> <!--
+                      ^--- Added class  -->
+  <div class="container" style="overflow-y: scroll; height:400px;">
+    <div class="row">
+    {% for obj in other %}
+
+
+  <div class = "col-sm-3 ">
+							<div class = "container-fluid panel panel-default">
+
+         <form enctype="multipart/form-data" action="update-file" method="post">
+             <div class="form-group">
+
+
+                <input type="hidden" name="id" value={{obj[0]}} />
+                 <input class="form-control" disabled = "true" name="user_name" value = {{obj[1]}} />
+                <input class="form-control" disabled = "true" name="title" value = {{obj[2]}} />
+
+                <input class="form-control" name="rating" value = {{obj[3]}} />
+
+		   <button type="submit" class="btn btn-primary">Delete</button>
+             </div>
+		 </form>
+</div>
+  </div>
+
+       {% endfor %}
+
+  </div>
+      </div>
+</div>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <footer class="footer">
+            <p>&copy; Prasoon 2018</p>
+        </footer>
+
+  </div>
+</nav>
+
+</body>
+ 
+</html>

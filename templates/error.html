@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Flask Assignment 2 SDG</title>
+ 
+ 
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation"><a href="#">Upload</a>
+                    </li>
+                    <li role="presentation"><a href="showSignUp">Download</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Assignment 2 - SDG</h3>
+        </div>
+ 
+ 
+         	<p>Error!
+		</p>
+
+		<form method="post" action="file-download" name="submit">
+		<input type="submit" name="Download" value="Download Files">
+		</form>
+
+		<form method="post" action="ListFiles" name="submit" enctype="multipart/form-data">
+		<input type="submit" name="List" value="List Files">
+		</form>
+ 
+        <footer class="footer">
+            <p>&copy; SDG 2017</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
+</html>

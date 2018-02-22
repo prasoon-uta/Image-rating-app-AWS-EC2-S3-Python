@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Flask Assignment</title>
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+      <p>Prasoon kumar 1001415936</p>
+    <p> Please Authenticate </p>
+
+  </div>
+</nav>
+
+<div class="jumbotron vertical-center"> <!--
+                      ^--- Added class  -->
+  <div class="container">
+     <form action="/login" method="POST"  >
+  <div class="form-group">
+    <label >User Name</label>
+    <input  class="form-control" id="username" name="username"  placeholder="Enter user name">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+         {{msg}}
+</form>
+  </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <footer class="footer">
+            <p>&copy; Prasoon 2018</p>
+        </footer>
+
+  </div>
+</nav>
+
+</body>
+
+
+
+
+</html>
